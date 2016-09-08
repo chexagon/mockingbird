@@ -1,0 +1,1738 @@
+{
+  "properties": {
+    "twitter_schema_description": {
+      "enum": [
+        "A retweet 50 leading @mentions, a URL entity, a photo entity, and four extended entities (combined into collage)."
+      ],
+      "type": "string"
+    },
+    "twitter_schema_type": {
+      "enum": [
+        "retweet"
+      ],
+      "type": "string"
+    },
+    "contributors": {
+      "type": "null"
+    },
+    "coordinates": {
+      "type": "null"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "display_text_range": {
+      "items": [
+        {
+          "enum": [
+            0
+          ],
+          "type": "integer"
+        },
+        {
+          "enum": [
+            79
+          ],
+          "type": "integer"
+        }
+      ],
+      "type": "array"
+    },
+    "entities": {
+      "properties": {
+        "hashtags": {
+          "items": [],
+          "type": "array"
+        },
+        "media": {
+          "items": [],
+          "type": "array"
+        },
+        "symbols": {
+          "items": [],
+          "type": "array"
+        },
+        "urls": {
+          "items": [],
+          "type": "array"
+        },
+        "user_mentions": {
+          "items": [],
+          "type": "array"
+        }
+      },
+      "required": [
+        "hashtags",
+        "media",
+        "symbols",
+        "urls",
+        "user_mentions"
+      ],
+      "type": "object"
+    },
+    "extended_entities": {
+      "properties": {
+        "media": {
+          "items": [],
+          "type": "array"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "favorite_count": {
+      "type": "integer"
+    },
+    "favorited": {
+      "type": "boolean"
+    },
+    "filter_level": {
+      "type": "string"
+    },
+    "geo": {
+      "type": "null"
+    },
+    "id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 999999999999999999
+    },
+    "id_str": {
+      "type": "string",
+      "pattern": "[1-9][0-9]{17}"
+    },
+    "in_reply_to_screen_name": {
+      "type": "null"
+    },
+    "in_reply_to_status_id": {
+      "type": "null"
+    },
+    "in_reply_to_status_id_str": {
+      "type": "null"
+    },
+    "in_reply_to_user_id": {
+      "type": "null"
+    },
+    "in_reply_to_user_id_str": {
+      "type": "null"
+    },
+    "is_quote_status": {
+      "type": "boolean"
+    },
+    "lang": {
+      "enum": [
+        "en"
+      ],
+      "type": "string"
+    },
+    "place": {
+      "type": "null"
+    },
+    "possibly_sensitive": {
+      "type": "boolean"
+    },
+    "retweet_count": {
+      "type": "integer"
+    },
+    "retweeted": {
+      "type": "boolean"
+    },
+    "retweeted_status": {
+      "properties": {
+        "contributors": {
+          "type": "null"
+        },
+        "coordinates": {
+          "type": "null"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "display_text_range": {
+          "items": [
+            {
+              "enum": [
+                0
+              ],
+              "type": "integer"
+            },
+            {
+              "enum": [
+                79
+              ],
+              "type": "integer"
+            }
+          ],
+          "type": "array"
+        },
+        "entities": {
+          "properties": {
+            "hashtags": {
+              "items": [],
+              "type": "array"
+            },
+            "media": {
+              "items": [],
+              "type": "array"
+            },
+            "symbols": {
+              "items": [],
+              "type": "array"
+            },
+            "urls": {
+              "items": [],
+              "type": "array"
+            },
+            "user_mentions": {
+              "items": [],
+              "type": "array"
+            }
+          },
+          "required": [
+            "hashtags",
+            "media",
+            "symbols",
+            "urls",
+            "user_mentions"
+          ],
+          "type": "object"
+        },
+        "extended_entities": {
+          "properties": {
+            "media": {
+              "items": [],
+              "type": "array"
+            }
+          },
+          "required": [
+            "media"
+          ],
+          "type": "object"
+        },
+        "extended_tweet": {
+          "properties": {
+            "display_text_range": {
+              "items": [
+                {
+                  "enum": [
+                    850
+                  ],
+                  "type": "integer"
+                },
+                {
+                  "enum": [
+                    990
+                  ],
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            "entities": {
+              "properties": {
+                "media": {
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "properties": {
+                      "display_url": {
+                        "type": "string",
+                        "enum": [
+                          "pic.twitter.com/UMAKWq7V6M"
+                        ]
+                      },
+                      "expanded_url": {
+                        "type": "string",
+                        "enum": [
+                        "https://twitter.com/momoclozamurai/status/769128357552197632/photo/1"
+                          ]
+                      },
+                      "id": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 999999999999999999
+                      },
+                      "id_str": {
+                        "type": "string",
+                        "pattern": "[1-9][0-9]{17}"
+                      },
+                      "indices": {
+                        "items": [
+                          {
+                            "enum": [
+                              1016
+                            ],
+                            "type": "integer"
+                          },
+                          {
+                            "enum": [
+                              1039
+                            ],
+                            "type": "integer"
+                          }
+                        ],
+                        "type": "array"
+                      },
+                      "media_url": {
+                        "type": "string",
+                        "enum": [
+                          "http://pbs.twimg.com/media/Cqx-EJAVIAAXd9D.jpg"
+                        ]
+                      },
+                      "media_url_https": {
+                        "type": "string",
+                        "enum": [
+                          "https://pbs.twimg.com/media/Cqx-EJAVIAAXd9D.jpg"
+                        ]
+                      },
+                      "sizes": {
+                        "properties": {
+                          "large": {
+                            "properties": {
+                              "h": {
+                                "type": "integer"
+                              },
+                              "resize": {
+                                "type": "string"
+                              },
+                              "w": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "h",
+                              "resize",
+                              "w"
+                            ],
+                            "type": "object"
+                          },
+                          "medium": {
+                            "properties": {
+                              "h": {
+                                "type": "integer"
+                              },
+                              "resize": {
+                                "type": "string"
+                              },
+                              "w": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "h",
+                              "resize",
+                              "w"
+                            ],
+                            "type": "object"
+                          },
+                          "small": {
+                            "properties": {
+                              "h": {
+                                "type": "integer"
+                              },
+                              "resize": {
+                                "type": "string"
+                              },
+                              "w": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "h",
+                              "resize",
+                              "w"
+                            ],
+                            "type": "object"
+                          },
+                          "thumb": {
+                            "properties": {
+                              "h": {
+                                "type": "integer"
+                              },
+                              "resize": {
+                                "type": "string"
+                              },
+                              "w": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "h",
+                              "resize",
+                              "w"
+                            ],
+                            "type": "object"
+                          }
+                        },
+                        "required": [
+                          "large",
+                          "medium",
+                          "small",
+                          "thumb"
+                        ],
+                        "type": "object"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "photo"
+                        ]
+                      },
+                      "url": {
+                        "type": "string",
+                        "enum": [
+                          "https://t.co/UMAKWq7V6M"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "display_url",
+                      "expanded_url",
+                      "id",
+                      "id_str",
+                      "indices",
+                      "media_url",
+                      "media_url_https",
+                      "sizes",
+                      "type",
+                      "url"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "urls": {
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "properties": {
+                      "display_url": {
+                        "type": "string",
+                        "enum": [
+                          "momoclozamurai.xxxblog.jp/archives/48311…"
+                        ]
+                      },
+                      "expanded_url": {
+                        "type": "string",
+                        "enum": [
+                          "http://momoclozamurai.xxxblog.jp/archives/48311343.html"
+                        ]
+                      },
+                      "indices": {
+                        "items": [
+                          {
+                            "enum": [
+                              991
+                            ],
+                            "type": "integer"
+                          },
+                          {
+                            "enum": [
+                              1015
+                            ],
+                            "type": "integer"
+                          }
+                        ],
+                        "type": "array"
+                      },
+                      "url": {
+                        "type": "string",
+                        "enum": [
+                          "https://t.co/v0UjmcemUq"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "display_url",
+                      "expanded_url",
+                      "indices",
+                      "url"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "user_mentions": {
+                  "minItems": 50,
+                  "maxItems": 50,
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 999999999999999999
+                      },
+                      "id_str": {
+                        "type": "string",
+                        "pattern": "[1-9][0-9]{17}"
+                      },
+                      "indices": {
+                        "items": {
+                          "type": "integer"
+                        },
+                        "type": "array"
+                      },
+                      "name": {
+                        "type": "string",
+                        "pattern": "[^\uFFFE\uFEFF\uFFFF\u202A\u202E]{20}"
+                      },
+                      "screen_name": {
+                        "pattern": "[a-zA-Z0-9_]{15}",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "id_str",
+                      "indices",
+                      "name",
+                      "screen_name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "media",
+                "urls",
+                "user_mentions"
+              ],
+              "type": "object"
+            },
+            "extended_entities": {
+              "properties": {
+                "media": {
+                  "items": [
+                    {
+                      "properties": {
+                        "display_url": {
+                          "type": "string",
+                          "enum": [
+                            "pic.twitter.com/UMAKWq7V6M"
+                          ]
+                        },
+                        "expanded_url": {
+                          "type": "string",
+                          "enum": [
+                            "https://twitter.com/momoclozamurai/status/769128357552197632/photo/1"
+                          ]
+                        },
+                        "id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "indices": {
+                          "items": {
+                            "type": "integer"
+                          },
+                          "type": "array"
+                        },
+                        "media_url": {
+                          "type": "string",
+                          "enum": [
+                            "http://pbs.twimg.com/media/Cqx-EJAVIAAXd9D.jpg"
+                          ]
+                        },
+                        "media_url_https": {
+                          "type": "string",
+                          "enum": [
+                            "https://pbs.twimg.com/media/Cqx-EJAVIAAXd9D.jpg"
+                          ]
+                        },
+                        "sizes": {
+                          "properties": {
+                            "large": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "medium": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "small": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "thumb": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "medium",
+                            "small",
+                            "thumb"
+                          ],
+                          "type": "object"
+                        },
+                        "source_status_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_status_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "source_user_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_user_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "photo"
+                          ]
+                        },
+                        "url": {
+                          "type": "string",
+                          "enum": [
+                            "https://t.co/UMAKWq7V6M"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "display_url",
+                        "expanded_url",
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "sizes",
+                        "source_status_id",
+                        "source_status_id_str",
+                        "source_user_id",
+                        "source_user_id_str",
+                        "type",
+                        "url"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "display_url": {
+                          "type": "string",
+                          "enum": [
+                            "pic.twitter.com/UMAKWq7V6M"
+                          ]
+                        },
+                        "expanded_url": {
+                          "type": "string",
+                          "enum": [
+                            "https://twitter.com/momoclozamurai/status/769128357552197632/photo/1"
+                          ]
+                        },
+                        "id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "indices": {
+                          "items": {
+                            "type": "integer"
+                          },
+                          "type": "array"
+                        },
+                        "media_url": {
+                          "type": "string",
+                          "enum": [
+                            "http://pbs.twimg.com/media/Cqx-E9pVUAEdqgF.jpg"
+                          ]
+                        },
+                        "media_url_https": {
+                          "type": "string",
+                          "enum": [
+                            "https://pbs.twimg.com/media/Cqx-E9pVUAEdqgF.jpg"
+                          ]
+                        },
+                        "sizes": {
+                          "properties": {
+                            "large": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "medium": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "small": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "thumb": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "medium",
+                            "small",
+                            "thumb"
+                          ],
+                          "type": "object"
+                        },
+                        "source_status_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_status_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "source_user_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_user_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "photo"
+                          ]
+                        },
+                        "url": {
+                          "type": "string",
+                          "enum": [
+                            "https://t.co/UMAKWq7V6M"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "display_url",
+                        "expanded_url",
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "sizes",
+                        "source_status_id",
+                        "source_status_id_str",
+                        "source_user_id",
+                        "source_user_id_str",
+                        "type",
+                        "url"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "display_url": {
+                          "type": "string",
+                          "enum": [
+                            "pic.twitter.com/UMAKWq7V6M"
+                          ]
+                        },
+                        "expanded_url": {
+                          "type": "string",
+                          "enum": [
+                            "https://twitter.com/momoclozamurai/status/769128357552197632/photo/1"
+                          ]
+                        },
+                        "id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "indices": {
+                          "items": {
+                            "type": "integer"
+                          },
+                          "type": "array"
+                        },
+                        "media_url": {
+                          "type": "string",
+                          "enum": [
+                            "http://pbs.twimg.com/media/Cqx-FhBUIAA5tP8.jpg"
+                          ]
+                        },
+                        "media_url_https": {
+                          "type": "string",
+                          "enum": [
+                            "https://pbs.twimg.com/media/Cqx-FhBUIAA5tP8.jpg"
+                          ]
+                        },
+                        "sizes": {
+                          "properties": {
+                            "large": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "medium": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "small": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "thumb": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "medium",
+                            "small",
+                            "thumb"
+                          ],
+                          "type": "object"
+                        },
+                        "source_status_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_status_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "source_user_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_user_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "photo"
+                          ]
+                        },
+                        "url": {
+                          "type": "string",
+                          "enum": [
+                            "https://t.co/UMAKWq7V6M"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "display_url",
+                        "expanded_url",
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "sizes",
+                        "source_status_id",
+                        "source_status_id_str",
+                        "source_user_id",
+                        "source_user_id_str",
+                        "type",
+                        "url"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "display_url": {
+                          "type": "string",
+                          "enum": [
+                            "pic.twitter.com/UMAKWq7V6M"
+                          ]
+                        },
+                        "expanded_url": {
+                          "type": "string",
+                          "enum": [
+                            "https://twitter.com/momoclozamurai/status/769128357552197632/photo/1"
+                          ]
+                        },
+                        "id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "indices": {
+                          "items": {
+                            "type": "integer"
+                          },
+                          "type": "array"
+                        },
+                        "media_url": {
+                          "type": "string",
+                          "enum": [
+                            "http://pbs.twimg.com/media/Cqx-Js3UIAEOejw.jpg"
+                          ]
+                        },
+                        "media_url_https": {
+                          "type": "string",
+                          "enum": [
+                            "https://pbs.twimg.com/media/Cqx-Js3UIAEOejw.jpg"
+                          ]
+                        },
+                        "sizes": {
+                          "properties": {
+                            "large": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "medium": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "small": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            },
+                            "thumb": {
+                              "properties": {
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                },
+                                "w": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "h",
+                                "resize",
+                                "w"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "medium",
+                            "small",
+                            "thumb"
+                          ],
+                          "type": "object"
+                        },
+                        "source_status_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_status_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "source_user_id": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 999999999999999999
+                        },
+                        "source_user_id_str": {
+                          "type": "string",
+                          "pattern": "[1-9][0-9]{17}"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "photo"
+                          ]
+                        },
+                        "url": {
+                          "type": "string",
+                          "enum": [
+                            "https://t.co/UMAKWq7V6M"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "display_url",
+                        "expanded_url",
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "sizes",
+                        "source_status_id",
+                        "source_status_id_str",
+                        "source_user_id",
+                        "source_user_id_str",
+                        "type",
+                        "url"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "media"
+              ],
+              "type": "object"
+            },
+            "full_text": {
+              "pattern": "\\@alicewonderland (\\@[A-Za-z0-9_]{15} ){49}\\{TEXT\\} https://t\\.co/v0UjmcemUq https://t\\.co/UMAKWq7V6M",
+              "type": "string"
+            }
+          },
+          "required": [
+            "display_text_range",
+            "entities",
+            "full_text"
+          ],
+          "type": "object"
+        },
+        "favorite_count": {
+          "type": "integer"
+        },
+        "favorited": {
+          "type": "boolean"
+        },
+        "filter_level": {
+          "type": "string"
+        },
+        "geo": {
+          "type": "null"
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999999999999999
+        },
+        "id_str": {
+          "type": "string",
+          "pattern": "[1-9][0-9]{17}"
+        },
+        "in_reply_to_screen_name": {
+          "pattern": "[a-zA-Z0-9_]{15}",
+          "type": "string"
+        },
+        "in_reply_to_status_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999999999999999
+        },
+        "in_reply_to_status_id_str": {
+          "type": "string",
+          "pattern": "[1-9][0-9]{17}"
+        },
+        "in_reply_to_user_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999999999999999
+        },
+        "in_reply_to_user_id_str": {
+          "type": "string",
+          "pattern": "[1-9][0-9]{17}"
+        },
+        "is_quote_status": {
+          "type": "boolean"
+        },
+        "lang": {
+          "enum": [
+            "en"
+          ],
+          "type": "string"
+        },
+        "place": {
+          "type": "null"
+        },
+        "possibly_sensitive": {
+          "type": "boolean"
+        },
+        "retweet_count": {
+          "type": "integer"
+        },
+        "retweeted": {
+          "type": "boolean"
+        },
+        "source": {
+          "type": "string"
+        },
+        "text": {
+          "enum": [
+            "Truncated text for retweet with url + photo attachments. This should end in a …| http://t.co/StatusURL"
+          ],
+          "type": "string"
+        },
+        "truncated": {
+          "type": "boolean",
+          "enum": [
+            true
+          ]
+        },
+        "user": {
+          "properties": {
+            "contributors_enabled": {
+              "type": "boolean"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "default_profile": {
+              "type": "boolean"
+            },
+            "default_profile_image": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "null"
+            },
+            "favourites_count": {
+              "type": "integer"
+            },
+            "follow_request_sent": {
+              "type": "null"
+            },
+            "followers_count": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 20000
+            },
+            "following": {
+              "type": "null"
+            },
+            "friends_count": {
+              "type": "integer"
+            },
+            "geo_enabled": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999999999999999999
+            },
+            "id_str": {
+              "type": "string",
+              "pattern": "[1-9][0-9]{17}"
+            },
+            "is_translator": {
+              "type": "boolean"
+            },
+            "lang": {
+              "enum": [
+                "en"
+              ],
+              "type": "string"
+            },
+            "listed_count": {
+              "type": "null"
+            },
+            "location": {
+              "type": "null"
+            },
+            "name": {
+              "type": "string",
+              "pattern": "[^\uFFFE\uFEFF\uFFFF\u202A\u202E]{20}"
+            },
+            "notifications": {
+              "type": "null"
+            },
+            "profile_background_color": {
+              "type": "string"
+            },
+            "profile_background_image_url": {
+              "type": "null"
+            },
+            "profile_background_image_url_https": {
+              "type": "null"
+            },
+            "profile_background_tile": {
+              "type": "boolean"
+            },
+            "profile_image_url": {
+              "type": "string"
+            },
+            "profile_image_url_https": {
+              "type": "string"
+            },
+            "profile_link_color": {
+              "type": "string"
+            },
+            "profile_sidebar_border_color": {
+              "type": "string"
+            },
+            "profile_sidebar_fill_color": {
+              "type": "string"
+            },
+            "profile_text_color": {
+              "type": "string"
+            },
+            "profile_use_background_image": {
+              "type": "boolean"
+            },
+            "protected": {
+              "type": "boolean"
+            },
+            "screen_name": {
+              "pattern": "[a-zA-Z0-9_]{15}",
+              "type": "string"
+            },
+            "statuses_count": {
+              "type": "integer"
+            },
+            "time_zone": {
+              "type": "string",
+              "enum": [
+                "Eastern Time (US & Canada)"
+              ]
+            },
+            "url": {
+              "type": "null"
+            },
+            "utc_offset": {
+              "type": "integer",
+              "enum": [
+                -14400
+              ]
+            },
+            "verified": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "contributors_enabled",
+            "created_at",
+            "default_profile",
+            "default_profile_image",
+            "description",
+            "favourites_count",
+            "follow_request_sent",
+            "followers_count",
+            "following",
+            "friends_count",
+            "geo_enabled",
+            "id",
+            "id_str",
+            "is_translator",
+            "lang",
+            "listed_count",
+            "location",
+            "name",
+            "notifications",
+            "profile_background_color",
+            "profile_background_image_url",
+            "profile_background_image_url_https",
+            "profile_background_tile",
+            "profile_image_url",
+            "profile_image_url_https",
+            "profile_link_color",
+            "profile_sidebar_border_color",
+            "profile_sidebar_fill_color",
+            "profile_text_color",
+            "profile_use_background_image",
+            "protected",
+            "screen_name",
+            "statuses_count",
+            "time_zone",
+            "url",
+            "utc_offset",
+            "verified"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "contributors",
+        "coordinates",
+        "created_at",
+        "display_text_range",
+        "entities",
+        "extended_tweet",
+        "favorite_count",
+        "favorited",
+        "filter_level",
+        "geo",
+        "id",
+        "id_str",
+        "in_reply_to_screen_name",
+        "in_reply_to_status_id",
+        "in_reply_to_status_id_str",
+        "in_reply_to_user_id",
+        "in_reply_to_user_id_str",
+        "is_quote_status",
+        "lang",
+        "place",
+        "possibly_sensitive",
+        "retweet_count",
+        "retweeted",
+        "source",
+        "text",
+        "truncated",
+        "user"
+      ],
+      "type": "object"
+    },
+    "source": {
+      "type": "string"
+    },
+    "text": {
+      "enum": [
+        "Truncated text for retweet with url + photo attachments. This should end in a …| http://t.co/StatusURL"
+      ],
+      "type": "string"
+    },
+    "truncated": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "user": {
+      "properties": {
+        "contributors_enabled": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "default_profile": {
+          "type": "boolean"
+        },
+        "default_profile_image": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "null"
+        },
+        "favourites_count": {
+          "type": "integer"
+        },
+        "follow_request_sent": {
+          "type": "null"
+        },
+        "followers_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20000
+        },
+        "following": {
+          "type": "null"
+        },
+        "friends_count": {
+          "type": "integer"
+        },
+        "geo_enabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999999999999999
+        },
+        "id_str": {
+          "type": "string",
+          "pattern": "[1-9][0-9]{17}"
+        },
+        "is_translator": {
+          "type": "boolean"
+        },
+        "lang": {
+          "enum": [
+            "en"
+          ],
+          "type": "string"
+        },
+        "listed_count": {
+          "type": "null"
+        },
+        "location": {
+          "type": "null"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "[^\uFFFE\uFEFF\uFFFF\u202A\u202E]{20}"
+        },
+        "notifications": {
+          "type": "null"
+        },
+        "profile_background_color": {
+          "type": "string"
+        },
+        "profile_background_image_url": {
+          "type": "null"
+        },
+        "profile_background_image_url_https": {
+          "type": "null"
+        },
+        "profile_background_tile": {
+          "type": "boolean"
+        },
+        "profile_image_url": {
+          "type": "string"
+        },
+        "profile_image_url_https": {
+          "type": "string"
+        },
+        "profile_link_color": {
+          "type": "string"
+        },
+        "profile_sidebar_border_color": {
+          "type": "string"
+        },
+        "profile_sidebar_fill_color": {
+          "type": "string"
+        },
+        "profile_text_color": {
+          "type": "string"
+        },
+        "profile_use_background_image": {
+          "type": "boolean"
+        },
+        "protected": {
+          "type": "boolean"
+        },
+        "screen_name": {
+          "pattern": "[a-zA-Z0-9_]{15}",
+          "type": "string"
+        },
+        "statuses_count": {
+          "type": "integer"
+        },
+        "time_zone": {
+          "type": "string",
+          "enum": [
+            "Eastern Time (US & Canada)"
+          ]
+        },
+        "url": {
+          "type": "null"
+        },
+        "utc_offset": {
+          "type": "integer",
+          "enum": [
+            -14400
+          ]
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "contributors_enabled",
+        "created_at",
+        "default_profile",
+        "default_profile_image",
+        "description",
+        "favourites_count",
+        "follow_request_sent",
+        "followers_count",
+        "following",
+        "friends_count",
+        "geo_enabled",
+        "id",
+        "id_str",
+        "is_translator",
+        "lang",
+        "listed_count",
+        "location",
+        "name",
+        "notifications",
+        "profile_background_color",
+        "profile_background_image_url",
+        "profile_background_image_url_https",
+        "profile_background_tile",
+        "profile_image_url",
+        "profile_image_url_https",
+        "profile_link_color",
+        "profile_sidebar_border_color",
+        "profile_sidebar_fill_color",
+        "profile_text_color",
+        "profile_use_background_image",
+        "protected",
+        "screen_name",
+        "statuses_count",
+        "time_zone",
+        "url",
+        "utc_offset",
+        "verified"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "contributors",
+    "coordinates",
+    "created_at",
+    "display_text_range",
+    "entities",
+    "extended_entities",
+    "favorite_count",
+    "favorited",
+    "filter_level",
+    "geo",
+    "id",
+    "id_str",
+    "in_reply_to_screen_name",
+    "in_reply_to_status_id",
+    "in_reply_to_status_id_str",
+    "in_reply_to_user_id",
+    "in_reply_to_user_id_str",
+    "is_quote_status",
+    "lang",
+    "place",
+    "possibly_sensitive",
+    "retweet_count",
+    "retweeted",
+    "retweeted_status",
+    "source",
+    "text",
+    "truncated",
+    "user"
+  ],
+  "type": "object"
+}

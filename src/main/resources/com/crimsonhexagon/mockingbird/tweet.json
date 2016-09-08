@@ -1,0 +1,892 @@
+{
+  "properties": {
+    "twitter_schema_description": {
+      "type": "string",
+      "enum": [
+        "A normal tweet with a leading @mention and multiple attached URL (URL + Photos)."
+      ]
+    },
+    "twitter_schema_type": {
+      "type": "string",
+      "enum": [
+        "tweet"
+      ]
+    },
+    "contributors": {
+      "type": "null"
+    },
+    "coordinates": {
+      "type": "null"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "display_text_range": {
+      "items": [
+        {
+          "enum": [
+            0
+          ],
+          "type": "integer"
+        },
+        {
+          "enum": [
+            76
+          ],
+          "type": "integer"
+        }
+      ],
+      "type": "array"
+    },
+    "entities": {
+      "properties": {
+        "hashtags": {
+          "items": [],
+          "type": "array"
+        },
+        "media": {
+          "items": [],
+          "type": "array"
+        },
+        "symbols": {
+          "items": [],
+          "type": "array"
+        },
+        "urls": {
+          "items": [],
+          "type": "array"
+        },
+        "user_mentions": {
+          "items": [],
+          "type": "array"
+        }
+      },
+      "required": [
+        "hashtags",
+        "media",
+        "symbols",
+        "urls",
+        "user_mentions"
+      ],
+      "type": "object"
+    },
+    "extended_entities": {
+      "properties": {
+        "media": {
+          "items": [],
+          "type": "array"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "extended_tweet": {
+      "type": "object",
+      "properties": {
+        "display_text_range": {
+          "type": "array",
+          "items": [
+            {
+              "type": "integer",
+              "enum": [
+                17
+              ]
+            },
+            {
+              "type": "integer",
+              "enum": [
+                157
+              ]
+            }
+          ]
+        },
+        "entities": {
+          "properties": {
+            "media": {
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "properties": {
+                  "display_url": {
+                    "type": "string",
+                    "enum": [
+                      "pic.twitter.com/sA8pOUOqKe"
+                    ]
+                  },
+                  "expanded_url": {
+                    "type": "string",
+                    "enum": [
+                      "https://twitter.com/dearscarjames/status/769153726523191297/video/1"
+                    ]
+                  },
+                  "id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999999999999999999
+                  },
+                  "id_str": {
+                    "type": "string",
+                    "pattern": "[1-9][0-9]{17}"
+                  },
+                  "indices": {
+                    "items": [
+                      {
+                        "type": "integer",
+                        "enum": [
+                          120
+                        ]
+                      },
+                      {
+                        "type": "integer",
+                        "enum": [
+                          130
+                        ]
+                      }
+                    ],
+                    "type": "array"
+                  },
+                  "media_url": {
+                    "type": "string",
+                    "enum": [
+                      "http://pbs.twimg.com/ext_tw_video_thumb/769153655668813824/pu/img/lPLtErdbB-mNDdkT.jpg"
+                    ]
+                  },
+                  "media_url_https": {
+                    "type": "string",
+                    "enum": [
+                      "https://pbs.twimg.com/ext_tw_video_thumb/769153655668813824/pu/img/lPLtErdbB-mNDdkT.jpg"
+                    ]
+                  },
+                  "sizes": {
+                    "properties": {
+                      "large": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      },
+                      "medium": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      },
+                      "small": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      },
+                      "thumb": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "large",
+                      "medium",
+                      "small",
+                      "thumb"
+                    ],
+                    "type": "object"
+                  },
+                  "source_status_id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999999999999999999
+                  },
+                  "source_status_id_str": {
+                    "type": "string",
+                    "pattern": "[1-9][0-9]{17}"
+                  },
+                  "source_user_id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999999999999999999
+                  },
+                  "source_user_id_str": {
+                    "type": "string",
+                    "pattern": "[1-9][0-9]{17}"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "photo"
+                    ]
+                  },
+                  "url": {
+                    "type": "string",
+                    "enum": [
+                      "https://t.co/sA8pOUOqKe"
+                    ]
+                  }
+                },
+                "required": [
+                  "display_url",
+                  "expanded_url",
+                  "id",
+                  "id_str",
+                  "indices",
+                  "media_url",
+                  "media_url_https",
+                  "sizes",
+                  "source_status_id",
+                  "source_status_id_str",
+                  "source_user_id",
+                  "source_user_id_str",
+                  "type",
+                  "url"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "urls": {
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "properties": {
+                  "display_url": {
+                    "type": "string",
+                    "enum": [
+                      "fb.me/MK1X0fRA"
+                    ]
+                  },
+                  "expanded_url": {
+                    "type": "string",
+                    "enum": [
+                      "http://fb.me/MK1X0fRA"
+                    ]
+                  },
+                  "indices": {
+                    "items": [
+                      {
+                        "type": "integer",
+                        "enum": [
+                          158
+                        ]
+                      },
+                      {
+                        "type": "integer",
+                        "enum": [
+                          181
+                        ]
+                      }
+                    ],
+                    "type": "array"
+                  },
+                  "url": {
+                    "type": "string",
+                    "enum": [
+                      "https://t.co/jrVihurjnU"
+                    ]
+                  }
+                },
+                "required": [
+                  "display_url",
+                  "expanded_url",
+                  "indices",
+                  "url"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "media",
+            "urls"
+          ],
+          "type": "object"
+        },
+        "extended_entities": {
+          "properties": {
+            "media": {
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "properties": {
+                  "display_url": {
+                    "type": "string",
+                    "enum": [
+                      "pic.twitter.com/sA8pOUOqKe"
+                    ]
+                  },
+                  "expanded_url": {
+                    "type": "string",
+                    "enum": [
+                      "https://twitter.com/dearscarjames/status/769153726523191297/video/1"
+                    ]
+                  },
+                  "id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999999999999999999
+                  },
+                  "id_str": {
+                    "type": "string",
+                    "pattern": "[1-9][0-9]{17}"
+                  },
+                  "indices": {
+                    "items": [
+                      {
+                        "type": "integer",
+                        "enum": [
+                          182
+                        ]
+                      },
+                      {
+                        "type": "integer",
+                        "enum": [
+                          205
+                        ]
+                      }
+                    ],
+                    "type": "array"
+                  },
+                  "media_url": {
+                    "type": "string",
+                    "enum": [
+                      "http://pbs.twimg.com/ext_tw_video_thumb/769153655668813824/pu/img/lPLtErdbB-mNDdkT.jpg"
+                    ]
+                  },
+                  "media_url_https": {
+                    "type": "string",
+                    "enum": [
+                      "https://pbs.twimg.com/ext_tw_video_thumb/769153655668813824/pu/img/lPLtErdbB-mNDdkT.jpg"
+                    ]
+                  },
+                  "sizes": {
+                    "properties": {
+                      "large": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      },
+                      "medium": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      },
+                      "small": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      },
+                      "thumb": {
+                        "properties": {
+                          "h": {
+                            "type": "integer"
+                          },
+                          "resize": {
+                            "type": "string"
+                          },
+                          "w": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "h",
+                          "resize",
+                          "w"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "large",
+                      "medium",
+                      "small",
+                      "thumb"
+                    ],
+                    "type": "object"
+                  },
+                  "source_status_id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999999999999999999
+                  },
+                  "source_status_id_str": {
+                    "type": "string",
+                    "pattern": "[1-9][0-9]{17}"
+                  },
+                  "source_user_id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 999999999999999999
+                  },
+                  "source_user_id_str": {
+                    "type": "string",
+                    "pattern": "[1-9][0-9]{17}"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "video"
+                    ]
+                  },
+                  "url": {
+                    "type": "string",
+                    "enum": [
+                      "https://t.co/sA8pOUOqKe"
+                    ]
+                  },
+                  "video_info": {
+                    "properties": {
+                      "aspect_ratio": {
+                        "items": {
+                          "type": "integer"
+                        },
+                        "type": "array"
+                      },
+                      "duration_millis": {
+                        "type": "integer"
+                      },
+                      "variants": {
+                        "items": {
+                          "properties": {
+                            "bitrate": {
+                              "type": "integer"
+                            },
+                            "content_type": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "content_type",
+                            "url"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "aspect_ratio",
+                      "duration_millis",
+                      "variants"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "display_url",
+                  "expanded_url",
+                  "id",
+                  "id_str",
+                  "indices",
+                  "media_url",
+                  "media_url_https",
+                  "sizes",
+                  "source_status_id",
+                  "source_status_id_str",
+                  "source_user_id",
+                  "source_user_id_str",
+                  "type",
+                  "url",
+                  "video_info"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "media"
+          ],
+          "type": "object"
+        },
+        "full_text": {
+          "type": "string",
+          "pattern": "\\@alicewonderland \\{TEXT\\} https://t\\.co/jrVihurjnU https://t\\.co/sA8pOUOqKe"
+        }
+      },
+      "required": [
+        "display_text_range",
+        "entities",
+        "extended_entities",
+        "full_text"
+      ]
+    },
+    "favorite_count": {
+      "type": "integer"
+    },
+    "favorited": {
+      "type": "boolean"
+    },
+    "filter_level": {
+      "type": "string"
+    },
+    "geo": {
+      "type": "null"
+    },
+    "id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 999999999999999999
+    },
+    "id_str": {
+      "type": "string",
+      "pattern": "[1-9][0-9]{17}"
+    },
+    "in_reply_to_screen_name": {
+      "type": "null"
+    },
+    "in_reply_to_status_id": {
+      "type": "null"
+    },
+    "in_reply_to_status_id_str": {
+      "type": "null"
+    },
+    "in_reply_to_user_id": {
+      "type": "null"
+    },
+    "in_reply_to_user_id_str": {
+      "type": "null"
+    },
+    "is_quote_status": {
+      "type": "boolean"
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "en"
+      ]
+    },
+    "place": {
+      "type": "null"
+    },
+    "possibly_sensitive": {
+      "type": "boolean"
+    },
+    "retweet_count": {
+      "type": "integer"
+    },
+    "retweeted": {
+      "type": "boolean",
+      "enum": [
+        false
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "enum": [
+        "Truncated text for tweet with url + video attachment. This should end in a …| http://t.co/StatusURL"
+      ]
+    },
+    "truncated": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "user": {
+      "properties": {
+        "contributors_enabled": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "default_profile": {
+          "type": "boolean"
+        },
+        "default_profile_image": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "favourites_count": {
+          "type": "integer"
+        },
+        "follow_request_sent": {
+          "type": "null"
+        },
+        "followers_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20000
+        },
+        "following": {
+          "type": "null"
+        },
+        "friends_count": {
+          "type": "integer"
+        },
+        "geo_enabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999999999999999
+        },
+        "id_str": {
+          "type": "string",
+          "pattern": "[1-9][0-9]{17}"
+        },
+        "is_translator": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "string",
+          "enum": [
+            "en"
+          ]
+        },
+        "listed_count": {
+          "type": "integer"
+        },
+        "location": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "[^\uFFFE\uFEFF\uFFFF\u202A\u202E]{20}"
+        },
+        "notifications": {
+          "type": "null"
+        },
+        "profile_background_color": {
+          "type": "string"
+        },
+        "profile_background_image_url": {
+          "type": "string"
+        },
+        "profile_background_image_url_https": {
+          "type": "string"
+        },
+        "profile_background_tile": {
+          "type": "boolean"
+        },
+        "profile_banner_url": {
+          "type": "string"
+        },
+        "profile_image_url": {
+          "type": "string"
+        },
+        "profile_image_url_https": {
+          "type": "string"
+        },
+        "profile_link_color": {
+          "type": "string"
+        },
+        "profile_sidebar_border_color": {
+          "type": "string"
+        },
+        "profile_sidebar_fill_color": {
+          "type": "string"
+        },
+        "profile_text_color": {
+          "type": "string"
+        },
+        "profile_use_background_image": {
+          "type": "boolean"
+        },
+        "protected": {
+          "type": "boolean"
+        },
+        "screen_name": {
+          "type": "string",
+          "pattern": "[a-zA-Z0-9_]{15}"
+        },
+        "statuses_count": {
+          "type": "integer"
+        },
+        "time_zone": {
+          "type": "string",
+          "enum": [
+            "Eastern Time (US & Canada)"
+          ]
+        },
+        "url": {
+          "type": "null"
+        },
+        "utc_offset": {
+          "type": "integer",
+          "enum": [
+            -14400
+          ]
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "contributors_enabled",
+        "created_at",
+        "default_profile",
+        "default_profile_image",
+        "description",
+        "favourites_count",
+        "follow_request_sent",
+        "followers_count",
+        "following",
+        "friends_count",
+        "geo_enabled",
+        "id",
+        "id_str",
+        "is_translator",
+        "lang",
+        "listed_count",
+        "location",
+        "name",
+        "notifications",
+        "profile_background_color",
+        "profile_background_image_url",
+        "profile_background_image_url_https",
+        "profile_background_tile",
+        "profile_banner_url",
+        "profile_image_url",
+        "profile_image_url_https",
+        "profile_link_color",
+        "profile_sidebar_border_color",
+        "profile_sidebar_fill_color",
+        "profile_text_color",
+        "profile_use_background_image",
+        "protected",
+        "screen_name",
+        "statuses_count",
+        "time_zone",
+        "url",
+        "utc_offset",
+        "verified"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "contributors",
+    "coordinates",
+    "created_at",
+    "entities",
+    "extended_entities",
+    "favorite_count",
+    "favorited",
+    "filter_level",
+    "geo",
+    "id",
+    "id_str",
+    "in_reply_to_screen_name",
+    "in_reply_to_status_id",
+    "in_reply_to_status_id_str",
+    "in_reply_to_user_id",
+    "in_reply_to_user_id_str",
+    "is_quote_status",
+    "lang",
+    "place",
+    "possibly_sensitive",
+    "retweet_count",
+    "retweeted",
+    "source",
+    "text",
+    "truncated",
+    "user"
+  ],
+  "type": "object"
+}
