@@ -25,10 +25,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 import static com.crimsonhexagon.mockingbird.jsonschema.SchemaUtil.loadSchemaFromClasspathResource;
+import static java.lang.String.format;
 import static java.lang.Thread.currentThread;
 import static java.time.Instant.now;
 import static java.time.temporal.ChronoUnit.MINUTES;
 import static java.time.temporal.ChronoUnit.SECONDS;
+import static org.apache.commons.lang3.StringUtils.join;
 
 public class MockingbirdClient extends TwitterHosebirdClient {
 
@@ -42,15 +44,6 @@ public class MockingbirdClient extends TwitterHosebirdClient {
 	private volatile boolean runGenerator;
 	private volatile boolean runWatcher;
 	private final AtomicLong count;
-
-	private static final String[] SENTENCES = {
-			"Alice, rather alarmed at the end of this sort which made it clear to me. I begged a fortnight's grace from the reigning families of Europe.|",
-			"Stark went up to the station. Have you a family I then answered that I should perch behind her landau when a cab came through the kitchens.|",
-			"My dear wife died young she left me by Sherlock Holmes pushed him down completely. He has nerve and he even thinks that I never hear of it.|",
-			"Making our way home, she seemed absurdly agitated over this business already. For my part, I should or should not have me arrested at once.|",
-			"Then my servant will call upon you and asking your advice \"You have erred, perhaps,\" he observed, taking up open. Better make it clearer.|",
-			"James and his watch--all were there. There was a widespread, comfortable-looking building, two-storied, slate-roofed, with great intensity.|"
-	};
 
 	public MockingbirdClient() {
 		generator = new JsonStringGenerator(
@@ -187,6 +180,14 @@ public class MockingbirdClient extends TwitterHosebirdClient {
 		private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss +0000 yyyy");
 		private final StringFromRegexGenerator strGenerator;
 
+		// see https://github.com/twitter/twitter-text/blob/master/rb/lib/twitter-text/regex.rb#L59
+		private final String[] INVALID_TWITTER_TEXT_CHARS = {
+			"\u0000",                                        // NUL
+			"\uFFFE", "\uFEFF",                              // BOM
+			"\uFFFF",                                        // Special
+			"\u202A", "\u202B", "\u202C", "\u202D", "\u202E" // Directional change
+		};
+
 		JsonStringGenerator(Schema... schemas) {
 			this.schemas = schemas;
 			this.generator = new JsonGenerator();
@@ -200,7 +201,7 @@ public class MockingbirdClient extends TwitterHosebirdClient {
 
 				@Override
 				public String value() {
-					return "[^\uFFFE\uFEFF\uFFFF\u202A\u202E]{140}";
+					return format("[^%s]{140}", join(INVALID_TWITTER_TEXT_CHARS));
 				}
 			});
 		}
@@ -240,9 +241,6 @@ public class MockingbirdClient extends TwitterHosebirdClient {
 		private void setFullText(JSONObject extendedTweet, SourceOfRandomness rnd, GenerationStatus gen) {
 			// ensure full text is >= 140
 			String sentence = strGenerator.generate(rnd, gen);
-			if (new Random().nextInt(10) == 5) {
-				sentence = SENTENCES[rnd.nextInt(SENTENCES.length)];
-			}
 
 			// add prefix marker then truncate to 140
 			StringBuilder tweetText = new StringBuilder();
