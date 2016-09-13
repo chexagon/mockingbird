@@ -255,7 +255,7 @@ public class MockingbirdClient extends TwitterHosebirdClient {
 			extendedTweet.put("full_text", fullText);
 			extendedTweet.put("display_text_range", new JSONArray()
 					.put(fullText.indexOf("FullTextValue:"))
-					.put(fullText.lastIndexOf(" http:")));
+					.put(fullText.lastIndexOf("| https:")));
 		}
 
 		private Schema chooseSchema(SourceOfRandomness rnd) {
