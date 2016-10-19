@@ -1,160 +1,97 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.crimsonhexagon</groupId>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.crimsonhexagon</groupId>
 	<artifactId>mockingbird</artifactId>
-    <packaging>jar</packaging>
+	<packaging>jar</packaging>
 	<name>Mockingbird</name>
-	<version>1.0.0</version>
-	<description>Generates fake tweets based on JSON schemas.</description>
+	<version>0.9.0</version>
+	<description>Generates fake, random JSON from JSON schemas.</description>
 
-   <distributionManagement>
-            <repository>
-                <id>chartifactory-releases</id>
-                <name>chartifactory-releases</name>
-                <url>http://dev-services.crimsonhexagon.com:8081/artifactory/libs-release-local</url>
-            </repository>
-            <snapshotRepository>
-                <id>chartifactory-snapshots</id>
-                <name>chartifactory-snapshots</name>
-                <url>http://dev-services.crimsonhexagon.com:8081/artifactory/libs-snapshot-local</url>
-            </snapshotRepository>
-        </distributionManagement>
-
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-                <id>chartifactory-releases</id>
-                <name>chartifactory-releases</name>
-            <url>http://dev-services.crimsonhexagon.com:8081/artifactory/repo</url>
-        </repository>
-        <repository>
-            <snapshots />
-                <id>chartifactory-snapshots</id>
-                <name>chartifactory-snapshots</name>
-            <url>http://dev-services.crimsonhexagon.com:8081/artifactory/repo</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>chartifactory-plugins</id>
-            <name>chartifactory-plugins</name>
-                        <url>http://dev-services.crimsonhexagon.com:8081/artifactory/artifactory/repo</url>
-        </pluginRepository>
-    </pluginRepositories>
-
+	<properties>
+		<java.version>1.8</java.version>
+		<maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
+		<org.everit.json.schema.version>1.3.0</org.everit.json.schema.version>
+		<junit.quickcheck.generators.version>0.7-beta-1</junit.quickcheck.generators.version>
+		<automaton.version>1.11-8</automaton.version>
+	</properties>
 
 	<build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <compilerArgument>-Xlint:all</compilerArgument>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-shade-plugin</artifactId>
-					<version>2.4.3</version>
-					<executions>
-						<execution>
-							<phase>package</phase>
-							<goals>
-								<goal>shade</goal>
-							</goals>
-							<configuration>
-								<finalName>${project.artifactId}-jar-with-dependencies</finalName>
-								<shadedArtifactAttached>true</shadedArtifactAttached>
-								<shadedClassifierName>uber</shadedClassifierName>
-								<createDependencyReducedPom>false</createDependencyReducedPom>
-								<transformers>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-										<resource>META-INF/spring.handlers</resource>
-									</transformer>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-										<resource>META-INF/spring.schemas</resource>
-									</transformer>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-										<mainClass>com.crimsonhexagon.mockingbird.Launch</mainClass>
-									</transformer>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-								</transformers>
-								<filters>
-									<!-- See http://stackoverflow.com/a/6743609 -->
-									<filter>
-										<artifact>*:*</artifact>
-										<excludes>
-											<exclude>META-INF/*.SF</exclude>
-											<exclude>META-INF/*.DSA</exclude>
-											<exclude>META-INF/*.RSA</exclude>
-										</excludes>
-									</filter>
-								</filters>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-        </plugins>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${maven.shade.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<finalName>${project.artifactId}-jar-with-dependencies</finalName>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<shadedClassifierName>uber</shadedClassifierName>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>META-INF/spring.handlers</resource>
+								</transformer>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>META-INF/spring.schemas</resource>
+								</transformer>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.crimsonhexagon.mockingbird.Launch</mainClass>
+								</transformer>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+							</transformers>
+							<filters>
+								<!-- See http://stackoverflow.com/a/6743609 -->
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.crimsonhexagon</groupId>
-			<artifactId>chug</artifactId>
-			<version>Release81.2</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.spinn3r</groupId>
-					<artifactId>spinn3r-client</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
 			<groupId>org.everit.json</groupId>
 			<artifactId>org.everit.json.schema</artifactId>
-			<version>1.3.0</version>
+			<version>${org.everit.json.schema.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>com.pholser</groupId>
-            <artifactId>junit-quickcheck-generators</artifactId>
-            <version>0.7-alpha-1</version>
+			<groupId>com.pholser</groupId>
+			<artifactId>junit-quickcheck-generators</artifactId>
+			<version>${junit.quickcheck.generators.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>dk.brics.automaton</groupId>
-            <artifactId>automaton</artifactId>
-            <version>1.11-8</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
-            <scope>test</scope>
-        </dependency>
+			<groupId>dk.brics.automaton</groupId>
+			<artifactId>automaton</artifactId>
+			<version>${automaton.version}</version>
+		</dependency>
 	</dependencies>
 </project>
