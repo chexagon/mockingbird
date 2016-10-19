@@ -10,8 +10,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * {@link JsonSchema} defines an annotation to declare the JSON schema path to use.
- * <br><br>
- * This is most commonly configured within a {@link JsonNodeGenerator}:
  *
  * <pre>
  *     &#64;Property(trials = 500)
