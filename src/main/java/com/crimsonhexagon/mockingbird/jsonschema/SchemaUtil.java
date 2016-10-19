@@ -6,8 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.Charset;
 
 import static java.nio.charset.Charset.forName;
@@ -26,12 +25,39 @@ public class SchemaUtil {
      * @return {@link Schema} JSON Schema object
      * @throws JSONException thrown when the JSON Schema fails to parse
      */
-    public static Schema loadSchemaFromClasspathResource(String resourceLocation) throws JSONException {
-        InputStream stream = SchemaUtil.class.getResourceAsStream(resourceLocation);
-        if (stream == null) return null;
+    public static Schema loadSchemaFromClasspathResource(String resourceLocation) {
+	    return loadSchemaFromInputStream(SchemaUtil.class.getResourceAsStream(resourceLocation));
+    }
 
-        JSONObject jsonSchema = new JSONObject(new JSONTokener(new InputStreamReader(stream, UTF8)));
-        return SchemaLoader.load(jsonSchema);
+	/**
+	 * Loads a {@link Schema} from a JSON Schema {@link File}.
+	 *
+	 * @param file {@link File} JSON Schema file
+	 * @return {@link Schema} JSON Schema object
+	 * @throws JSONException thrown when the JSON Schema fails to parse
+	 */
+    public static Schema loadSchemaFromFile(File file) {
+	    try {
+		    return loadSchemaFromInputStream(new FileInputStream(file));
+	    } catch (FileNotFoundException e) {
+		    // missing file, in this case we return null
+	    }
+	    return null;
+    }
+
+	/**
+	 * Loads a {@link Schema} from a JSON Schema {@link InputStream}.
+	 *
+	 * @param inputStream {@link InputStream} JSON Schema input stream
+	 * @return {@link Schema} JSON Schema object
+	 * @throws JSONException thrown when the JSON Schema fails to parse
+	 */
+    public static Schema loadSchemaFromInputStream(InputStream inputStream) {
+	    if (inputStream == null) return null;
+
+	    JSONObject jsonSchema = new JSONObject(new JSONTokener(new InputStreamReader(inputStream, UTF8)));
+	    return SchemaLoader.load(jsonSchema);
+
     }
 
     private SchemaUtil() {
