@@ -1,4 +1,4 @@
-package com.crimsonhexagon.mockingbird;
+package com.crimsonhexagon.mockingbird.api;
 
 import java.io.File;
 import java.util.List;
@@ -9,8 +9,14 @@ import static java.lang.String.format;
 import static java.lang.System.exit;
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.toList;
+import static java.lang.System.out;
 
-public class Launch {
+/**
+ * {@link Launch} provides a simple Java main for command-line usage.
+ * <br><br>
+ * Simply provide one or more JSON Schema file paths as arguments.
+ */
+class Launch {
 
     public static void main(String[] args) {
 	    Stream<File> files = stream(args).map(File::new);
@@ -21,7 +27,10 @@ public class Launch {
 	    }
 
 	    new Mockingbird()
-			    .generate(stream(args).map(File::new).toArray(File[]::new))
-			    .forEach(System.out::println);
+			.generate(stream(args).map(File::new).toArray(File[]::new))
+			.forEach((json) -> {
+				out.println(json);
+				out.flush();
+			});
     }
 }

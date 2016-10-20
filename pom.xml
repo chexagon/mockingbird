@@ -55,7 +55,7 @@
 									<resource>META-INF/spring.schemas</resource>
 								</transformer>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.crimsonhexagon.mockingbird.Launch</mainClass>
+									<mainClass>com.crimsonhexagon.mockingbird.api.Launch</mainClass>
 								</transformer>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
 							</transformers>

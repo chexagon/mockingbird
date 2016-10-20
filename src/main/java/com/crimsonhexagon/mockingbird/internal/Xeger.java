@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crimsonhexagon.mockingbird.jsonschema;
+package com.crimsonhexagon.mockingbird.internal;
 
 import dk.brics.automaton.Automaton;
 import dk.brics.automaton.RegExp;

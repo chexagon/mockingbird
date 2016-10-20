@@ -1,4 +1,4 @@
-package com.crimsonhexagon.mockingbird.jsonschema;
+package com.crimsonhexagon.mockingbird.internal;
 
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.loader.SchemaLoader;

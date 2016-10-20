@@ -1,5 +1,6 @@
-package com.crimsonhexagon.mockingbird.generators;
+package com.crimsonhexagon.mockingbird.api.annotations;
 
+import com.crimsonhexagon.mockingbird.api.generators.StringFromRegexGenerator;
 import com.pholser.junit.quickcheck.generator.GeneratorConfiguration;
 
 import java.lang.annotation.Retention;

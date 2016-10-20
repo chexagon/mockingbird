@@ -1,4 +1,4 @@
-package com.crimsonhexagon.mockingbird.jsonschema;
+package com.crimsonhexagon.mockingbird.api.annotations;
 
 import com.pholser.junit.quickcheck.generator.GeneratorConfiguration;
 

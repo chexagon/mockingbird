@@ -1,5 +1,6 @@
-package com.crimsonhexagon.mockingbird.jsonschema;
+package com.crimsonhexagon.mockingbird.api.generators;
 
+import com.crimsonhexagon.mockingbird.internal.Xeger;
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
 import com.pholser.junit.quickcheck.generator.java.lang.BooleanGenerator;

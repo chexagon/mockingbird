@@ -1,6 +1,8 @@
-package com.crimsonhexagon.mockingbird.generators;
+package com.crimsonhexagon.mockingbird.api.generators;
 
-import com.crimsonhexagon.mockingbird.jsonschema.Xeger;
+import com.crimsonhexagon.mockingbird.api.annotations.IncludeStrings;
+import com.crimsonhexagon.mockingbird.api.annotations.RegexPattern;
+import com.crimsonhexagon.mockingbird.internal.Xeger;
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;

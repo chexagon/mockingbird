@@ -1,4 +1,4 @@
-package com.crimsonhexagon.mockingbird;
+package com.crimsonhexagon.mockingbird.api;
 
 import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;

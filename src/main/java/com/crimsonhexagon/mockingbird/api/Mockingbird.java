@@ -1,7 +1,7 @@
-package com.crimsonhexagon.mockingbird;
+package com.crimsonhexagon.mockingbird.api;
 
-import com.crimsonhexagon.mockingbird.generators.JsonStringGenerator;
-import com.crimsonhexagon.mockingbird.jsonschema.SchemaUtil;
+import com.crimsonhexagon.mockingbird.api.generators.JsonStringGenerator;
+import com.crimsonhexagon.mockingbird.internal.SchemaUtil;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
 import org.everit.json.schema.Schema;
 
@@ -14,7 +14,6 @@ import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import static com.crimsonhexagon.mockingbird.Guards.requireAllNonNull;
 import static java.lang.String.join;
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.toList;
@@ -29,14 +28,14 @@ import static java.lang.String.format;
 public class Mockingbird {
 
 	public Stream<String> generate(Schema... jsonSchemas) {
-		requireAllNonNull(jsonSchemas);
+		Guards.requireAllNonNull(jsonSchemas);
 
 		final JsonStringGenerator generator = new JsonStringGenerator(jsonSchemas);
 		return Stream.generate(() -> generator.generate(new SourceOfRandomness(new Random()), null));
 	}
 
 	public Stream<String> generate(InputStream... jsonSchemas) {
-		requireAllNonNull(jsonSchemas);
+		Guards.requireAllNonNull(jsonSchemas);
 
 		return generate(stream(jsonSchemas)
 				.map(SchemaUtil::loadSchemaFromInputStream)
@@ -44,7 +43,7 @@ public class Mockingbird {
 	}
 
 	public Stream<String> generate(File... jsonSchemas) {
-		requireAllNonNull(jsonSchemas);
+		Guards.requireAllNonNull(jsonSchemas);
 
 		List<File> unreadableFiles = stream(jsonSchemas)
 				.filter(((Predicate<? super File>) File::canRead).negate())
